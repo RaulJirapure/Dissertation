@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<div class="container">
+    <div class="mt-5 d-flex justify-content-center" style="font-size:28px; font-weight: 400;">
+        {{module.title}}
+    </div>
+
+    <div class="mt-3 d-flex justify-content-around">
+        <div>
+            Module Code: {{module.code}}
+        </div>  
+
+        <div>
+            Module Credits: {{module.credits}}
+        </div>
+    </div>
+
+    <div class="mt-5 d-flex justify-content-start">
+        {{module.description|safe}}
+    </div>
+
+    <div class="mt-5 d-flex justify-content-center" style="font-size:28px; font-weight: 400;"> Master Degrees Related...</div>
+
+        <!-- This is where I can assign which modules relate to which Master Degree -->
+
+    <div class="mt-5">
+        {% for master in masters %}
+            {% include "components/resultsbox.html" with object=master type="master" %}
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}

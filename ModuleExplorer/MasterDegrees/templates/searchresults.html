@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %} 
+
+<div class="container" >
+
+    {% include "components/searchbar.html" %}
+
+        {% if master_degrees %}
+            {% for degree in master_degrees %}
+                {% include "components/resultsbox.html" with object=degree type="master" %}
+            {% endfor %}
+        {% else %}
+            <div> No Search Results Found </div>
+    
+        {% endif %}
+
+</div>
+
+
+    
+    <!-- Searches if the value inputted into search bar results to a Master Degree, if not, display No Search Results Found -->
+
+
+{% endblock content %}

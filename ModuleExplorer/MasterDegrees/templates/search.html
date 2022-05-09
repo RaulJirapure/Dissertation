@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<div class="container mt-5">
+
+<div class="w-100">
+<!-- always centered  not-->
+<div class="d-flex justify-content-center search_logo row" >
+    Your Postgraduate Journey Starts Here
+</div>
+
+<div class="mt-5">
+{% include "components/searchbar.html" %}
+</div>
+
+</div>
+    <!-- This is where body text goes -->
+</div>
+
+
+<style>
+    .search_logo{
+        font-size: 30px;
+    }
+</style>
+
+
+
+
+
+{% endblock content %}
+

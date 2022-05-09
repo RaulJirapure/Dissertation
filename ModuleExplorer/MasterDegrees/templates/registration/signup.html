@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container d-flex justify_content_center" style="max-width:800px">
+  <div class="login_container">
+    <h2>Sign up</h2>
+    <form method="post">                                                                                  <!-- Sends data to the webserver to be processed -->
+      {% csrf_token %}                                                                                    <!-- Security against Cross Site Request Forgery Attacks -->
+      {{ form.as_p }}                                                                                     <!-- Surrounds the form in paragraph tags -->
+      <button class= "submit_button" type="submit">Sign Up</button>
+    </form>
+  </div>
+</div>
+
+<style>
+
+  .submit_button{
+
+    width: 100px;
+    -webkit-appearance: none;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #ffffff;
+    border-radius: 5px;
+    background-color: 	#282b30;
+    color: #ffffff;
+
+  }
+
+  .login_container{
+
+    width: 100%;
+
+  }
+
+  #id_username{
+
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+
+  }
+
+    /** The first Password you are asked to enter **/
+
+  #id_password1{
+
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+  }
+
+    /** Password Confirmation **/
+
+  #id_password2{
+
+    display: block;
+    width: 100%;
+    height: calc(2.25rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+  }
+
+
+
+</style>
+
+{% endblock %}

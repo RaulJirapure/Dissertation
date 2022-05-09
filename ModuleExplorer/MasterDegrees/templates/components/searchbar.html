@@ -1,0 +1,47 @@
+
+
+
+<div class="d-flex justify-content-center searchinput row">
+
+    <div class="d-flex justify-content-center pt-2 pb-3">
+        <input id="search_text" class= "search_text" name="search_text" type="text" placeholder="What do you want to study?" required style="font-size: 14px;">     <!--Search Bar -->
+        <button id="search_button" class="btn-12 search_button ml-2"><i class="fa-solid fa-magnifying-glass text-white"></i></button>                               <!-- Button Icon -->
+    </div>
+
+
+</div>
+
+<style>
+
+    .search_text{
+        border-width: 3px;
+        border-style: solid;
+        border-color: #ffffff;
+        border-radius: 5px 0px 0px 5px;
+        width: 500px;
+        padding: 5px
+    }
+
+    .search_button{
+        width: 100px;
+        -webkit-appearance: none;
+        border-width: 3px;
+        border-style: solid;
+        border-color: #ffffff;
+        border-radius: 0px 5px 5px 0px;
+        background-color: 	#282b30;
+    }    
+
+</style>
+
+ <!-- Using JavaScript so the search button has interactability -->
+
+<script>
+
+    button=document.getElementById("search_button")
+    button.addEventListener("click", ()=>{
+        window.location=`/results/${document.getElementById("search_text").value}`
+    }
+    )
+
+</script>

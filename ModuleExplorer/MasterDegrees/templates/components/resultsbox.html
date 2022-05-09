@@ -1,0 +1,78 @@
+{% load static %}
+
+
+
+<div class="d-flex justify-content-center my-3">
+    <a href="/{{type}}/{{object.id}}">
+        <div class="master_degree_container row text-white">
+
+                <!-- If the image assigned to the Master Degree is not found, use this alternative image -->
+
+            <div class="col-3 my-2">
+                <div class="master_image">
+                    {% if object.image %}
+                        <img src='{% static ""|add:object.image %}' style= "width: 135px; height: 135px;" alt="Image not found" />
+                    {% else %}
+                        <img src='{% static "media/test.jpg" %}' class= "w-100" alt="Image not found" />
+                    {% endif %}
+                </div>
+            </div>
+            
+                <!-- Setting the fields that will show in the Master Degree Container -->
+
+            <div class="col-9 my-2">
+                <div class="master_degree_title">
+                    {{object.title}}
+                </div>
+
+                <div class="master_degree_code">
+                    {{object.code}}
+                </div>
+
+                <div class="master_description">
+                    {{object.short_description|safe}}
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
+
+
+
+
+
+<style>
+
+
+    /** Creating the container for our Masters List box **/
+    .master_degree_container{
+
+        width: 800px;
+        border-width: 3px;
+        border-style: solid;
+        border-color: #424549;
+        border-radius: 10px;
+        background-color: 	#282b30;
+        height: 155px;
+
+
+    }
+
+    .master_degree_title{
+
+    }
+
+    .master_degree_code{
+
+}
+    /** This will make sure the description does not leave the container **/ 
+    .master_description{
+        overflow-y: auto;
+        height: 70px;
+    }
+
+    .master_image{
+
+    }
+
+</style>
